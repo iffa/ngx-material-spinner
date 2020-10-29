@@ -1,5 +1,5 @@
 import {Component, HostListener} from '@angular/core';
-import {NgxSpinnerService} from 'ngx-spinner';
+import {NgxMaterialSpinnerService} from 'ngx-material-spinner';
 
 const TABLET_SIZE = 768;
 const MOBILE_SIZE = 425;
@@ -11,7 +11,7 @@ const MOBILE_SIZE = 425;
 })
 export class AppComponent {
   spinnerConfig = {
-    bdColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
     fullScreen: true,
   };
 
@@ -27,7 +27,7 @@ export class AppComponent {
     }
   }
 
-  constructor(private spinner: NgxSpinnerService) {
+  constructor(private spinner: NgxMaterialSpinnerService) {
     const deviceWidth = window.innerWidth;
     if (deviceWidth <= MOBILE_SIZE) {
       this.noOfColumns = 1;

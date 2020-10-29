@@ -5,10 +5,10 @@
     <div class="code-outer">
       <div class="code">
         <div>
-          <i class="tag-name">&lt;ngx-spinner</i>
+          <i class="tag-name">&lt;ngx-material-spinner</i>
 
           <span class="input-wrapper">
-            <span class="input-name">bdColor</span>
+            <span class="input-name">backgroundColor</span>
             =
             <i class="input">
               <span>"{{spinnerConfig['bdColor']}}"</span>
@@ -31,7 +31,7 @@
             </i>
           </span>
           <i class="tag-name">&gt;</i>
-          <i class="tag-name">&lt;/ngx-spinner&gt;</i>
+          <i class="tag-name">&lt;/ngx-material-spinner&gt;</i>
         </div>
       </div>
     </div>
@@ -52,8 +52,8 @@
         <mat-grid-tile>
           <mat-form-field appearance="outline">
             <mat-label>Backdrop Colour</mat-label>
-            <input matInput placeholder="Backdrop Color" [(colorPicker)]="spinnerConfig['bdColor']"
-                   [cpCancelButton]="true" [(ngModel)]="spinnerConfig['bdColor']" [cpPosition]="'bottom'"
+            <input matInput placeholder="Background color" [(colorPicker)]="spinnerConfig['backgroundColor']"
+                   [cpCancelButton]="true" [(ngModel)]="spinnerConfig['backgroundColor']" [cpPosition]="'bottom'"
                    [cpOutputFormat]="'rgba'">
           </mat-form-field>
         </mat-grid-tile>
@@ -68,7 +68,7 @@
       </mat-grid-list>
       <div *ngIf="!spinnerConfig['fullScreen']">
         <ngx-material-spinner name='sample'
-                              [bdColor]="spinnerConfig['bdColor']"
+                              [backgroundColor]="spinnerConfig['backgroundColor']"
                               [fullScreen]="spinnerConfig['fullScreen']">
         </ngx-material-spinner>
       </div>
@@ -83,7 +83,7 @@
   </div>
 
   <div *ngIf="spinnerConfig['fullScreen']">
-    <ngx-material-spinner name='sample' [bdColor]="spinnerConfig['bdColor']">
+    <ngx-material-spinner name='sample' [backgroundColor]="spinnerConfig['backgroundColor']">
     </ngx-material-spinner>
   </div>
 </div>

@@ -20,10 +20,10 @@
     ],
     "paths": {
       "ngx-material-spinner": [
-        "dist/ngx-spinner"
+        "dist/ngx-material-spinner"
       ],
-      "ngx-spinner/*": [
-        "dist/ngx-spinner/*"
+      "ngx-material-spinner/*": [
+        "dist/ngx-material-spinner/*"
       ]
     }
   }

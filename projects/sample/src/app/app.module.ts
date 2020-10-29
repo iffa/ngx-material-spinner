@@ -16,7 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxMaterialSpinnerModule } from 'ngx-material-spinner';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
@@ -39,7 +39,7 @@ import { HeaderComponent } from './header/header.component';
     MatIconModule,
     MatButtonModule,
     MatSelectModule,
-    NgxSpinnerModule,
+    NgxMaterialSpinnerModule,
     MatExpansionModule,
     MatSlideToggleModule
   ],

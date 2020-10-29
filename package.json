@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve sample -o",
     "build": "ng build ngx-material-spinner --prod",
+    "build:sample": "ng build sample --prod",
     "test": "ng test ngx-material-spinner",
     "lint": "ng lint",
     "e2e": "ng e2e"
