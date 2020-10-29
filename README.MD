@@ -3,6 +3,8 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 ![Dependency Status](https://img.shields.io/david/iffa/ngx-material-spinner.svg?style=flat-square)
 ![Code coverage](https://img.shields.io/codecov/c/gh/iffa/ngx-material-spinner?style=flat-square)
+![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-material-spinner?style=flat-square)
+![npm](https://img.shields.io/npm/v/ngx-material-spinner?style=flat-square)
 
 Lightweight spinner module for Angular, built using Angular Material.
 
