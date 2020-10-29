@@ -18,6 +18,9 @@ jobs:
           npm ci
           npm run build --if-present
           
+      - shell: bash
+        run: cp README.md dist/ngx-material-spinner/README.md
+          
       - name: Archive library artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -57,4 +60,4 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.GH_REGISTRY_TOKEN}}
