@@ -3,38 +3,39 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-spinner": {
-      "root": "projects/ngx-spinner",
-      "sourceRoot": "projects/ngx-spinner/src",
+    "ngx-material-spinner": {
+      "root": "projects/ngx-material-spinner",
+      "sourceRoot": "projects/ngx-material-spinner/src",
       "projectType": "library",
       "prefix": "ngx",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ngx-spinner/tsconfig.lib.json",
-            "project": "projects/ngx-spinner/ng-package.json"
+            "tsConfig": "projects/ngx-material-spinner/tsconfig.lib.json",
+            "project": "projects/ngx-material-spinner/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-spinner/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-material-spinner/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-spinner/src/test.ts",
-            "tsConfig": "projects/ngx-spinner/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-spinner/karma.conf.js"
+            "codeCoverage": true,
+            "main": "projects/ngx-material-spinner/src/test.ts",
+            "tsConfig": "projects/ngx-material-spinner/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-material-spinner/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-spinner/tsconfig.lib.json",
-              "projects/ngx-spinner/tsconfig.spec.json"
+              "projects/ngx-material-spinner/tsconfig.lib.json",
+              "projects/ngx-material-spinner/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -43,9 +44,9 @@
         }
       }
     },
-    "ngx-tester": {
-      "root": "projects/ngx-tester/",
-      "sourceRoot": "projects/ngx-tester/src",
+    "sample": {
+      "root": "projects/sample/",
+      "sourceRoot": "projects/sample/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -54,17 +55,17 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "outputPath": "dist/ngx-tester",
-            "index": "projects/ngx-tester/src/index.html",
-            "main": "projects/ngx-tester/src/main.ts",
-            "polyfills": "projects/ngx-tester/src/polyfills.ts",
-            "tsConfig": "projects/ngx-tester/tsconfig.app.json",
+            "outputPath": "dist/sample",
+            "index": "projects/sample/src/index.html",
+            "main": "projects/sample/src/main.ts",
+            "polyfills": "projects/sample/src/polyfills.ts",
+            "tsConfig": "projects/sample/tsconfig.app.json",
             "assets": [
-              "projects/ngx-tester/src/favicon.ico",
-              "projects/ngx-tester/src/assets"
+              "projects/sample/src/favicon.ico",
+              "projects/sample/src/assets"
             ],
             "styles": [
-              "projects/ngx-tester/src/styles.css"
+              "projects/sample/src/styles.css"
             ],
             "scripts": []
           },
@@ -72,8 +73,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/ngx-tester/src/environments/environment.ts",
-                  "with": "projects/ngx-tester/src/environments/environment.prod.ts"
+                  "replace": "projects/sample/src/environments/environment.ts",
+                  "with": "projects/sample/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -102,34 +103,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-tester:build"
+            "browserTarget": "sample:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-tester:build:production"
+              "browserTarget": "sample:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-tester:build"
+            "browserTarget": "sample:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-tester/src/test.ts",
-            "polyfills": "projects/ngx-tester/src/polyfills.ts",
-            "tsConfig": "projects/ngx-tester/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-tester/karma.conf.js",
+            "main": "projects/sample/src/test.ts",
+            "polyfills": "projects/sample/src/polyfills.ts",
+            "tsConfig": "projects/sample/tsconfig.spec.json",
+            "karmaConfig": "projects/sample/karma.conf.js",
             "styles": [
-              "projects/ngx-tester/src/styles.css"
+              "projects/sample/src/styles.css"
             ],
             "scripts": [],
             "assets": [
-              "projects/ngx-tester/src/favicon.ico",
-              "projects/ngx-tester/src/assets"
+              "projects/sample/src/favicon.ico",
+              "projects/sample/src/assets"
             ]
           }
         },
@@ -137,37 +138,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-tester/tsconfig.app.json",
-              "projects/ngx-tester/tsconfig.spec.json"
+              "projects/sample/tsconfig.app.json",
+              "projects/sample/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ngx-tester-e2e": {
-      "root": "projects/ngx-tester-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/ngx-tester-e2e/protractor.conf.js",
-            "devServerTarget": "ngx-tester:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ngx-tester:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/ngx-tester-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -176,5 +149,8 @@
       }
     }
   },
-  "defaultProject": "ngx-spinner"
+  "defaultProject": "ngx-material-spinner",
+  "cli": {
+    "analytics": false
+  }
 }

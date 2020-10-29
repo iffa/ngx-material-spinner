@@ -1,0 +1,27 @@
+{
+  "name": "ngx-material-spinner",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iffa/ngx-spinner.git"
+  },
+  "author": "Santeri Elo <me@santeri.xyz> (https://iffa.dev)",
+  "keywords": [
+    "angular",
+    "spinner",
+    "loading-indicator",
+    "progress-indicator"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iffa/ngx-spinner/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^10.0.0",
+    "@angular/core": "^10.0.0",
+    "@angular/material": "^10.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+<div class="overlay" *ngIf="shouldShow() | async"
+     [@fadeIn]="'in'"
+     [style.background-color]="backgroundColor"
+     [style.z-index]="zIndex"
+     [style.position]="fullScreen ? 'fixed' : 'absolute'">
+  <div>
+    <mat-spinner [color]="color" [diameter]="diameter" [strokeWidth]="strokeWidth">
+    </mat-spinner>
+  </div>
+</div>

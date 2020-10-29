@@ -1,0 +1,89 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="code-container">
+    <div class="code-outer">
+      <div class="code">
+        <div>
+          <i class="tag-name">&lt;ngx-spinner</i>
+
+          <span class="input-wrapper">
+            <span class="input-name">bdColor</span>
+            =
+            <i class="input">
+              <span>"{{spinnerConfig['bdColor']}}"</span>
+            </i>
+          </span>
+
+          <span class="input-wrapper">
+            <span class="input-name"> [fullScreen]</span>
+            =
+            <i class="input">
+              <span>"{{spinnerConfig['fullScreen']}}"</span>
+            </i>
+          </span>
+
+          <span class="input-wrapper" *ngIf="spinnerConfig['template']">
+            <span class="input-name"> template</span>
+            =
+            <i class="input">
+              <span>"{{spinnerConfig['template']}}"</span>
+            </i>
+          </span>
+          <i class="tag-name">&gt;</i>
+          <i class="tag-name">&lt;/ngx-spinner&gt;</i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Spinner Options
+        </mat-panel-title>
+        <mat-panel-description>
+          Set different configuration
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-grid-list [cols]="noOfColumns" rowHeight="85">
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Backdrop Colour</mat-label>
+            <input matInput placeholder="Backdrop Color" [(colorPicker)]="spinnerConfig['bdColor']"
+                   [cpCancelButton]="true" [(ngModel)]="spinnerConfig['bdColor']" [cpPosition]="'bottom'"
+                   [cpOutputFormat]="'rgba'">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <label class="mat-input-placeholder mat-form-field-placeholder label-text" [style.width.%]="90"
+                 [style.paddingBottom.rem]="3">Fullscreen Mode</label>
+          <mat-slide-toggle class="example-margin" color="primary" [checked]="spinnerConfig['fullScreen']"
+                            [style.width.%]="90" (toggleChange)="setFullscreenMode()">
+            {{spinnerConfig['fullScreen'] ? 'Enabled' : 'Disabled'}}
+          </mat-slide-toggle>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div *ngIf="!spinnerConfig['fullScreen']">
+        <ngx-material-spinner name='sample'
+                              [bdColor]="spinnerConfig['bdColor']"
+                              [fullScreen]="spinnerConfig['fullScreen']">
+        </ngx-material-spinner>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div class="button-container">
+    <button mat-raised-button color="accent" (click)="showSpinner('sample')" title="Start Spinner">Start
+      Spinner
+    </button>
+    <p [style.fontSize.px]="14">(The spinner will be stopped automatically after 3 seconds)</p>
+  </div>
+
+  <div *ngIf="spinnerConfig['fullScreen']">
+    <ngx-material-spinner name='sample' [bdColor]="spinnerConfig['bdColor']">
+    </ngx-material-spinner>
+  </div>
+</div>
