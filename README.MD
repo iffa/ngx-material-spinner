@@ -1,11 +1,12 @@
-[![Angular version required](https://img.shields.io/badge/@angular/core-^10.0.0-blue.svg?style=flat-square)]()
-[![Angular Material version required](https://img.shields.io/badge/@angular/material-^10.0.0-blue.svg?style=flat-square)]()
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)]()
-[![devDependency Status](https://img.shields.io/david/iffa/ngx-spinner.svg?style=flat-square)]()
+![Angular version required](https://img.shields.io/badge/@angular/core-^10.0.0-blue.svg?style=flat-square)
+![Angular Material version required](https://img.shields.io/badge/@angular/material-^10.0.0-blue.svg?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+![Dependency Status](https://img.shields.io/david/iffa/ngx-material-spinner.svg?style=flat-square)
+![Code coverage](https://img.shields.io/codecov/c/gh/iffa/ngx-material-spinner?style=flat-square)
 
 Lightweight spinner module for Angular, built using Angular Material.
 
-### Installation
+## Installation
 
 Using npm:
 
@@ -65,7 +66,7 @@ export class AppComponent implements OnInit {
 }
 ```
 
-### Available Options
+## Available options
 
 - **[backgroundColor]**: Set overlay background color in rgba, default `rgba(51, 51, 51, 0.8)`
 - **[color]**: Angular Material color choices, primary/secondary/accent, default `primary`
@@ -75,10 +76,10 @@ export class AppComponent implements OnInit {
 - **[name]**: Spinner instance name, default `primary`
 - **[zIndex]**: Z-index of the spinner overlay, default `99999`
 
-### Credits
+## Credits
 
 - Original creator [Napster2210](https://github.com/Napster2210/ngx-spinner)
 
-### License
+## License
 
 ngx-material-spinner is licensed under the [MIT license](./LICENSE).
