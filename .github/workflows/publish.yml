@@ -18,10 +18,7 @@ jobs:
       - run: |
           npm ci
           npm run build --if-present
-          
-      - shell: bash
-        run: cp README.md dist/ngx-material-spinner/README.md
-          
+        
       - name: Archive library artifacts
         uses: actions/upload-artifact@v2
         with:
