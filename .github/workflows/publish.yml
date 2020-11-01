@@ -11,11 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         
-      - uses: actions/setup-node@v1
+      - name: Build library
+        uses: actions/setup-node@v1
         with:
           node-version: 12
       - run: |
-          npm install --no-save
+          npm ci
           npm run build --if-present
         
       - name: Archive library artifacts
