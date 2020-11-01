@@ -1,5 +1,5 @@
 <div class="overlay" *ngIf="shouldShow() | async"
-     [@fadeIn]="'in'"
+     [@fadeIn]="'in'" [@.disabled]="!animated"
      [style.background-color]="backgroundColor"
      [style.z-index]="zIndex"
      [style.position]="fullScreen ? 'fixed' : 'absolute'">

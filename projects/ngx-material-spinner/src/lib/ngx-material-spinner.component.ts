@@ -57,6 +57,11 @@ export class NgxMaterialSpinnerComponent {
    */
   @Input() diameter = 96;
 
+  /**
+   * Set to false to disabled fade in animations.
+   */
+  @Input() animated = true;
+
   constructor(
     private spinnerService: NgxMaterialSpinnerService,
   ) {
