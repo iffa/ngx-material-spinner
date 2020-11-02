@@ -11,7 +11,7 @@ describe('NgxMaterialSpinnerService', function () {
     expect(spectator.service).toBeTruthy();
   });
 
-  it('#show emits to spinner subject', async () => {
+  it('show emits to spinner subject', async () => {
     spectator = createService();
 
     await spectator.service.show();
@@ -20,7 +20,7 @@ describe('NgxMaterialSpinnerService', function () {
     expect(spectator.service.spinnerSubject.getValue().show).toEqual(true);
   });
 
-  it('#hide emits to spinner subject', async () => {
+  it('hide emits to spinner subject', async () => {
     spectator = createService();
 
     await spectator.service.hide();
@@ -29,7 +29,7 @@ describe('NgxMaterialSpinnerService', function () {
     expect(spectator.service.spinnerSubject.getValue().show).toEqual(false);
   });
 
-  it('#getSpinner returns correct instance', async (done) => {
+  it('getSpinner returns correct instance', async (done) => {
     spectator = createService();
 
     spectator.service.getSpinner('spinner2').subscribe(spinner => {
@@ -42,7 +42,7 @@ describe('NgxMaterialSpinnerService', function () {
     await spectator.service.show('spinner2');
   });
 
-  it('#show and #hide respect custom spinner instance name', async () => {
+  it('show and hide respect custom spinner instance name', async () => {
     spectator = createService();
 
     await spectator.service.show('custom_name');
@@ -54,5 +54,25 @@ describe('NgxMaterialSpinnerService', function () {
 
     expect(spectator.service.spinnerSubject.getValue().name).toEqual('custom_name');
     expect(spectator.service.spinnerSubject.getValue().show).toEqual(false);
+  });
+
+  it('showDebounced shows spinner after debounce (no hide call)', async (done) => {
+    spectator = createService();
+
+    spectator.service.showDebounced().then(shown => {
+      expect(shown).toEqual(true);
+      done();
+    });
+  });
+
+  it('showDebounced doesnt show spinner after debounce (had hide call)', async (done) => {
+    spectator = createService();
+
+    spectator.service.showDebounced().then(shown => {
+      expect(shown).toEqual(false);
+      done();
+    });
+
+    await spectator.service.hide();
   });
 });
