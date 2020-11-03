@@ -10,7 +10,13 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sync-version": "sync-json -v --property version --source package.json projects/ngx-material-spinner/package.json && git add projects/ngx-material-spinner/package.json",
-    "version": "npm run sync-version && auto-changelog -p && git add CHANGELOG.md"
+    "version": "npm run sync-version && auto-changelog -p && git add CHANGELOG.md",
+    "format": "prettier --config ./.prettierrc --write \"projects/**/*/{.ts,.html,.scss}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
   },
   "private": true,
   "dependencies": {
@@ -43,6 +49,7 @@
     "auto-changelog": "^2.2.1",
     "codelyzer": "^6.0.0",
     "copyfiles": "^2.4.0",
+    "husky": "^4.3.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -52,6 +59,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "karma-spec-reporter": "0.0.32",
     "ng-packagr": "^10.0.0",
+    "prettier": "^2.1.2",
     "protractor": "~7.0.0",
     "sync-json": "^1.0.2",
     "ts-node": "~8.5.4",
