@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable, timer} from 'rxjs';
-import {filter, map, takeUntil, toArray} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, timer } from 'rxjs';
+import { filter, map, takeUntil, toArray } from 'rxjs/operators';
 
 export const PRIMARY_SPINNER = 'primary';
 
@@ -11,7 +11,7 @@ export interface NgxMaterialSpinnerConfig {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NgxMaterialSpinnerService {
   spinnerSubject = new BehaviorSubject<NgxMaterialSpinnerConfig>(null);
@@ -32,7 +32,7 @@ export class NgxMaterialSpinnerService {
    */
   show(name: string = PRIMARY_SPINNER): Promise<void> {
     return new Promise((resolve) => {
-      this.spinnerSubject.next({name, show: true});
+      this.spinnerSubject.next({ name, show: true });
       resolve();
     });
   }
@@ -47,21 +47,23 @@ export class NgxMaterialSpinnerService {
    * @param debounce Time to wait before showing spinner
    */
   showDebounced(name: string = PRIMARY_SPINNER, debounce: number = 250): Promise<boolean> {
-    return new Promise<boolean>(resolve => {
-      this.getSpinner(name).pipe(
-        takeUntil(timer(debounce)),
-        toArray(),
-        map(spinner => {
-          // don't show spinner because it was already hidden
-          if (spinner.find(x => x.show === false)) {
-            return false;
-          }
-          this.spinnerSubject.next({name, show: true});
-          return true;
-        })
-      ).subscribe(shown => {
-        resolve(shown);
-      });
+    return new Promise<boolean>((resolve) => {
+      this.getSpinner(name)
+        .pipe(
+          takeUntil(timer(debounce)),
+          toArray(),
+          map((spinner) => {
+            // don't show spinner because it was already hidden
+            if (spinner.find((x) => x.show === false)) {
+              return false;
+            }
+            this.spinnerSubject.next({ name, show: true });
+            return true;
+          })
+        )
+        .subscribe((shown) => {
+          resolve(shown);
+        });
     });
   }
 
@@ -73,7 +75,7 @@ export class NgxMaterialSpinnerService {
   hide(name: string = PRIMARY_SPINNER, debounce: number = 0): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        this.spinnerSubject.next({name, show: false});
+        this.spinnerSubject.next({ name, show: false });
         resolve();
       }, debounce);
     });

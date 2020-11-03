@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {NgxMaterialSpinnerService, PRIMARY_SPINNER} from './ngx-material-spinner.service';
-import {Observable} from 'rxjs';
-import {animate, state, style, transition, trigger} from '@angular/animations';
-import {ThemePalette} from '@angular/material/core';
-import {map} from 'rxjs/operators';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { NgxMaterialSpinnerService, PRIMARY_SPINNER } from './ngx-material-spinner.service';
+import { Observable } from 'rxjs';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ThemePalette } from '@angular/material/core';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'ngx-material-spinner',
@@ -12,14 +12,11 @@ import {map} from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeIn', [
-      state('in', style({opacity: 1})),
-      transition(':enter', [
-        style({opacity: 0}),
-        animate('150ms ease-in')
-      ]),
-      transition(':leave', animate('150ms ease-in', style({opacity: 0})))
-    ])
-  ]
+      state('in', style({ opacity: 1 })),
+      transition(':enter', [style({ opacity: 0 }), animate('150ms ease-in')]),
+      transition(':leave', animate('150ms ease-in', style({ opacity: 0 }))),
+    ]),
+  ],
 })
 export class NgxMaterialSpinnerComponent {
   /**
@@ -62,12 +59,9 @@ export class NgxMaterialSpinnerComponent {
    */
   @Input() animated = true;
 
-  constructor(
-    private spinnerService: NgxMaterialSpinnerService,
-  ) {
-  }
+  constructor(private spinnerService: NgxMaterialSpinnerService) {}
 
   shouldShow(): Observable<boolean> {
-    return this.spinnerService.getSpinner(this.name).pipe(map(spinner => spinner.show));
+    return this.spinnerService.getSpinner(this.name).pipe(map((spinner) => spinner.show));
   }
 }

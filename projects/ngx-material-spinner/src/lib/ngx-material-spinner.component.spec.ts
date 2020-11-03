@@ -1,20 +1,15 @@
-import {createComponentFactory, Spectator} from '@ngneat/spectator';
-import {NgxMaterialSpinnerComponent} from './ngx-material-spinner.component';
-import {NgxMaterialSpinnerService} from './ngx-material-spinner.service';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
+import { NgxMaterialSpinnerComponent } from './ngx-material-spinner.component';
+import { NgxMaterialSpinnerService } from './ngx-material-spinner.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('NgxMaterialSpinnerComponent', function () {
   let spectator: Spectator<NgxMaterialSpinnerComponent>;
   const createComponent = createComponentFactory({
     component: NgxMaterialSpinnerComponent,
-    imports: [
-      NoopAnimationsModule,
-      MatProgressSpinnerModule
-    ],
-    providers: [
-      NgxMaterialSpinnerService
-    ]
+    imports: [NoopAnimationsModule, MatProgressSpinnerModule],
+    providers: [NgxMaterialSpinnerService],
   });
 
   it('should create', () => {

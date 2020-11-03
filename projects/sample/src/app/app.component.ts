@@ -1,5 +1,5 @@
-import {Component, HostListener} from '@angular/core';
-import {NgxMaterialSpinnerService} from 'ngx-material-spinner';
+import { Component, HostListener } from '@angular/core';
+import { NgxMaterialSpinnerService } from 'ngx-material-spinner';
 
 const TABLET_SIZE = 768;
 const MOBILE_SIZE = 425;
@@ -7,7 +7,7 @@ const MOBILE_SIZE = 425;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   spinnerConfig = {

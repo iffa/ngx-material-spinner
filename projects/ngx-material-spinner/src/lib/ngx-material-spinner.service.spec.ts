@@ -1,5 +1,5 @@
-import {createServiceFactory, SpectatorService} from '@ngneat/spectator';
-import {NgxMaterialSpinnerService, PRIMARY_SPINNER} from './ngx-material-spinner.service';
+import { createServiceFactory, SpectatorService } from '@ngneat/spectator';
+import { NgxMaterialSpinnerService, PRIMARY_SPINNER } from './ngx-material-spinner.service';
 
 describe('NgxMaterialSpinnerService', function () {
   let spectator: SpectatorService<NgxMaterialSpinnerService>;
@@ -32,7 +32,7 @@ describe('NgxMaterialSpinnerService', function () {
   it('getSpinner returns correct instance', async (done) => {
     spectator = createService();
 
-    spectator.service.getSpinner('spinner2').subscribe(spinner => {
+    spectator.service.getSpinner('spinner2').subscribe((spinner) => {
       expect(spinner.name).toEqual('spinner2');
       expect(spinner.show).toEqual(true);
       done();
@@ -59,7 +59,7 @@ describe('NgxMaterialSpinnerService', function () {
   it('showDebounced shows spinner after debounce (no hide call)', async (done) => {
     spectator = createService();
 
-    spectator.service.showDebounced().then(shown => {
+    spectator.service.showDebounced().then((shown) => {
       expect(shown).toEqual(true);
       done();
     });
@@ -68,7 +68,7 @@ describe('NgxMaterialSpinnerService', function () {
   it('showDebounced doesnt show spinner after debounce (had hide call)', async (done) => {
     spectator = createService();
 
-    spectator.service.showDebounced().then(shown => {
+    spectator.service.showDebounced().then((shown) => {
       expect(shown).toEqual(false);
       done();
     });

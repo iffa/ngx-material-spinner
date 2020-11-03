@@ -5,6 +5,7 @@
 ![Code coverage](https://img.shields.io/codecov/c/gh/iffa/ngx-material-spinner?style=flat-square)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-material-spinner?style=flat-square)
 ![npm](https://img.shields.io/npm/v/ngx-material-spinner?style=flat-square)
+[![spectator](https://img.shields.io/badge/tested%20with-spectator-2196F3.svg?style=flat-square)]()
 
 Lightweight spinner module for Angular, built using Angular Material.
 
@@ -68,19 +69,24 @@ export class AppComponent implements OnInit {
 }
 ```
 
-## Available options
+## Options
 
-- **[backgroundColor]**: Set overlay background color in rgba, default `rgba(51, 51, 51, 0.8)`
-- **[color]**: Angular Material color choices, primary/secondary/accent, default `primary`
-- **[strokeWidth]**: Progress spinner stroke width, default `8`
-- **[diameter]**: Diameter (size) of the progress spinner, default `96`
-- **[fullScreen]**: Enable or disable fullscreen mode, default `true`
-- **[name]**: Spinner instance name, default `primary`
-- **[zIndex]**: Z-index of the spinner overlay, default `99999`
+Now, you can pass below config options to change inspector behavior in the `.forRoot()` method. All the options are optional.:
+
+| Option                | Type              | Description                                                                                                                                               |
+| --------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| backgroundColor       | `string`          | Change overlay background color<br>*Default value: `rgba(51, 51, 51, 0.8)`*                                                                               |
+| color                 | `ThemePalette`    | Set the spinner color, available options are Angular Material provided `primary`/`accent`/`warn`.<br>*Default value: `primary`*                           |
+| fullScreen            | `boolean`         | If set to true, uses full screen CSS styling.<br>*Default value: `true`*                                                                                  |
+| name                  | `string`          | Change the name of this spinner instance. Allows having multiple separate spinners in the application.<br>*Default value: `primary`*                      |
+| zIndex                | `number`          | Sets the overlay's z-index value. Change this if the overlay doesn't behave like an overlay (elements over it).<br>*Default value: `99999`*               |
+| strokeWidth           | `number`          | Set the stroke width of the progress spinner.<br>*Default value: `8`*                                                                                     |
+| diameter              | `number`          | Set the diameter of the progress spinner.<br>*Default value: `96`*                                                                                        |
+| animated              | `boolean`         | Enables or disables overlay fade animations.<br>*Default value: `true`*                                                                                   |
 
 ## Credits
 
-- Original creator [Napster2210](https://github.com/Napster2210/ngx-spinner)
+- Adapted and heavily modified from `ngx-spinner`, created by [Napster2210](https://github.com/Napster2210/)
 
 ## License
 
