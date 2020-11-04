@@ -13,3 +13,10 @@
   position: absolute;
   transform: translate(-50%, -50%);
 }
+
+.overlay > div.spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

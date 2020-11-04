@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'ngx-material-spinner',
   templateUrl: 'ngx-material-spinner.component.html',
-  styleUrls: ['ngx-material-spinner.component.css'],
+  styleUrls: ['ngx-material-spinner.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeIn', [

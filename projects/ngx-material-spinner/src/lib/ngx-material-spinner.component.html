@@ -7,7 +7,10 @@
   [style.z-index]="zIndex"
   [style.position]="fullScreen ? 'fixed' : 'absolute'"
 >
-  <div>
+  <div class="spinner-container">
     <mat-spinner [color]="color" [diameter]="diameter" [strokeWidth]="strokeWidth"> </mat-spinner>
+    <div id="spinner-custom-content">
+      <ng-content></ng-content>
+    </div>
   </div>
 </div>

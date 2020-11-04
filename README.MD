@@ -49,7 +49,7 @@ export class AppModule {}
 Add `ngx-material-spinner` to component template:
 
 ```html
-<ngx-material-spinner></ngx-material-spinner>
+<ngx-material-spinner><p>You can include custom content (i.e. loading text)</p></ngx-material-spinner>
 ```
 
 Inject `NgxMaterialSpinnerService` and access spinner functionality:

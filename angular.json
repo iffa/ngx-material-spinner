@@ -152,5 +152,10 @@
   "defaultProject": "ngx-material-spinner",
   "cli": {
     "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }

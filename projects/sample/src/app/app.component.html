@@ -76,6 +76,7 @@
       </mat-grid-list>
       <div *ngIf="!spinnerConfig['fullScreen']">
         <ngx-material-spinner name="sample" [backgroundColor]="spinnerConfig['backgroundColor']" [fullScreen]="spinnerConfig['fullScreen']">
+          <p>This is custom content</p>
         </ngx-material-spinner>
       </div>
     </mat-expansion-panel>
@@ -87,6 +88,8 @@
   </div>
 
   <div *ngIf="spinnerConfig['fullScreen']">
-    <ngx-material-spinner name="sample" [backgroundColor]="spinnerConfig['backgroundColor']" [animated]="true"> </ngx-material-spinner>
+    <ngx-material-spinner name="sample" [backgroundColor]="spinnerConfig['backgroundColor']" [animated]="true"
+      ><p>This is custom content</p></ngx-material-spinner
+    >
   </div>
 </div>
