@@ -17,9 +17,9 @@
     "url": "https://github.com/iffa/ngx-material-spinner/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^10.0.0",
-    "@angular/core": "^10.0.0",
-    "@angular/material": "^10.0.0"
+    "@angular/common": "^11.0.0",
+    "@angular/core": "^11.0.0",
+    "@angular/material": "^11.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
