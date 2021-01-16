@@ -1,5 +1,5 @@
-![Angular version required](https://img.shields.io/badge/@angular/core-^10.0.0-blue.svg?style=flat-square)
-![Angular Material version required](https://img.shields.io/badge/@angular/material-^10.0.0-blue.svg?style=flat-square)
+![Angular version required](https://img.shields.io/badge/@angular/core-^11.0.0-blue.svg?style=flat-square)
+![Angular Material version required](https://img.shields.io/badge/@angular/material-^11.0.0-blue.svg?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 ![Dependency Status](https://img.shields.io/david/iffa/ngx-material-spinner.svg?style=flat-square)
 ![Code coverage](https://img.shields.io/codecov/c/gh/iffa/ngx-material-spinner?style=flat-square)
